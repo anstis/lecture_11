@@ -41,6 +41,8 @@ def binary_search(seq, number):
             return middle
     return None
 
+def recursive_binary_search():
+
 
 def main(file_name, number):
     sequence = read_data(file_name=file_name, key="ordered_numbers")
