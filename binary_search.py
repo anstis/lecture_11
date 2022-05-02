@@ -41,7 +41,16 @@ def binary_search(seq, number):
             return middle
     return None
 
-def recursive_binary_search():
+def recursive_binary_search(arr, l, r, x):
+    if r >= l:
+        mid = l + (r - l) // 2
+        if arr[mid] == x:
+            return mid
+        elif arr[mid] > x:
+            return recursive_binary_search(arr, l, mid - 1, x)
+        else:
+            return recursive_binary_search(arr, mid + 1, r, x)
+
 
 
 def main(file_name, number):
@@ -49,6 +58,7 @@ def main(file_name, number):
 
     # iterative binary search
     binary_search(sequence, number=number)
+    print(recursive_binary_search(sequence, 0, (len(sequence)-1), x=number))
 
 
 if __name__ == "__main__":
